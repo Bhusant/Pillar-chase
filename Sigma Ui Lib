@@ -53,13 +53,15 @@ function Lib.Window(Title)
 	local UIPadding = Instance.new("UIPadding")
 	local UIListLayout = Instance.new("UIListLayout")
 	local TopBar = Instance.new("Frame")
-while true do
-    for hue = 0, 1, 0.01 do
+local function rainbowEffect()
+    local hue = 0
+    while true do
+        hue = hue + 0.01
+        if hue > 1 then hue = 0 end
         TopBar.BackgroundColor3 = Color3.fromHSV(hue, 1, 1)
         task.wait(0.05)
     end
 end
-
 	local TopCorner = Instance.new("UICorner")
 	local LibraryTitle = Instance.new("TextLabel")
 	local Extension = Instance.new("Frame")
@@ -1182,6 +1184,7 @@ end
 			DividerText.TextColor3 = Color3.fromRGB(227, 227, 227)
 			DividerText.TextSize = 22.000
 			DividerText.TextWrapped = true
+task.spawn(rainbowEffect)
 		end
 		return Content
 	end
