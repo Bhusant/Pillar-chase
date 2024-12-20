@@ -1,4 +1,3 @@
--- Ui lib
 local Lib = {}
 
 local tweenService = game:GetService("TweenService")
