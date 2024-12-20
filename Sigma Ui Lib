@@ -53,6 +53,13 @@ function Lib.Window(Title)
 	local UIPadding = Instance.new("UIPadding")
 	local UIListLayout = Instance.new("UIListLayout")
 	local TopBar = Instance.new("Frame")
+while true do
+    for hue = 0, 1, 0.01 do
+        TopBar.BackgroundColor3 = Color3.fromHSV(hue, 1, 1)
+        task.wait(0.05)
+    end
+end
+
 	local TopCorner = Instance.new("UICorner")
 	local LibraryTitle = Instance.new("TextLabel")
 	local Extension = Instance.new("Frame")
