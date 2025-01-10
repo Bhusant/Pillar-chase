@@ -227,6 +227,7 @@ end)
 local stroke = Instance.new("UIStroke")
 stroke.Parent = Tab
 stroke.Thickness = 2
+stroke.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
 task.spawn(function()
     while true do
         for colorValue = 0, 1, 0.01 do
