@@ -21,16 +21,14 @@ Frame.Position = UDim2.new(0.25, 0, 0.25, 0)
 local UIStroke = Instance.new("UIStroke")
 UIStroke.Parent = Frame
 UIStroke.Thickness = 2
-
 task.spawn(function()
     while true do
         for hue = 0, 1, 0.01 do
             UIStroke.Color = Color3.fromHSV(hue, 1, 1)
-            task.wait(0.05)
+            task.wait(0.01)
         end
     end
 end)
-
     local FrameCorner = Instance.new("UICorner")
     local DashBoard = Instance.new("Frame")
     local DashBoardCorner = Instance.new("UICorner")
