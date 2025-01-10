@@ -33,6 +33,90 @@ end)
     local DashBoard = Instance.new("Frame")
     local DashBoardCorner = Instance.new("UICorner")
     local TabContainer = Instance.new("Frame")
+local function DestroyYep()
+    for x = 1,69 do 
+        if player.PlayerGui:FindFirstChild("Toggle934483") then player.PlayerGui:FindFirstChild("Toggle934483"):Destroy() end
+    end
+end
+
+DestroyYep()
+
+local screenGui = Instance.new("ScreenGui")
+screenGui.Name = "Toggle934483"
+screenGui.Parent = game.Players.LocalPlayer.PlayerGui
+
+local button = Instance.new("ImageButton")
+button.Size = UDim2.new(0, 50, 0, 50)
+button.Position = UDim2.new(0.1, 0, 0.1, 0)
+button.Image = "rbxassetid://87832580977360"
+button.Parent = screenGui
+button.ZIndex = 2
+
+local stroke = Instance.new("UIStroke")
+stroke.Parent = button
+stroke.Thickness = 1
+
+local corner = Instance.new("UICorner")
+corner.Parent = button
+
+button.Draggable = true
+
+local tweenService = game:GetService("TweenService")
+local defaultSize = button.Size
+local enlargedSize = UDim2.new(0, 60, 0, 60)
+local defaultStrokeThickness = stroke.Thickness
+local enlargedStrokeThickness = 2
+
+local hoverSound = Instance.new("Sound")
+hoverSound.SoundId = "rbxassetid://720166642"
+
+local clickSound = Instance.new("Sound")
+clickSound.SoundId = "rbxassetid://6042053626"
+
+button.MouseEnter:Connect(function()
+    local tween = tweenService:Create(button, TweenInfo.new(0.2), {Size = enlargedSize})
+    tween:Play()
+    stroke.Thickness = enlargedStrokeThickness
+    local soundClone = hoverSound:Clone()
+    soundClone.Parent = button
+    soundClone:Play()
+    game.Debris:AddItem(soundClone, 2)
+end)
+
+button.MouseLeave:Connect(function()
+    local tween = tweenService:Create(button, TweenInfo.new(0.2), {Size = defaultSize})
+    tween:Play()
+    stroke.Thickness = defaultStrokeThickness
+end)
+
+button.MouseButton1Click:Connect(function()
+    local clickSoundClone = clickSound:Clone()
+    clickSoundClone.Parent = button
+    clickSoundClone:Play()
+local gui = game.CoreGui:FindFirstChild("fu8rj82n")
+if gui then
+if gui.Enabled then
+gui.Enabled = false
+else
+gui.Enabled = true
+end
+end
+    game.Debris:AddItem(clickSoundClone, 2)
+    for _, sound in pairs(button:GetChildren()) do
+        if sound:IsA("Sound") and sound.SoundId == hoverSound.SoundId then
+            sound:Destroy()
+        end
+    end
+end)
+
+task.spawn(function()
+    while true do
+        for i = 0, 360, 1 do
+            stroke.Color = Color3.fromHSV(i / 360, 1, 1)
+            task.wait(0.01)
+        end
+    end
+end)
 local stroke = Instance.new("UIStroke")
 stroke.Parent = TabContainer
 stroke.Thickness = 2
