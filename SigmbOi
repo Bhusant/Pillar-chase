@@ -6,7 +6,7 @@ local function DestroyYep()
 end
 
 DestroyYep()
-
+player = game.Players.LocalPlayer
 wait(0.069)
 
 local Library = {}
