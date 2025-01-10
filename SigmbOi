@@ -224,6 +224,18 @@ end)
 
     function PageYep:addPage(pagename,scrollsize,visible,elementspacing)
         local Tab = Instance.new("TextButton")
+local stroke = Instance.new("UIStroke")
+stroke.Parent = Tab
+stroke.Thickness = 2
+task.spawn(function()
+    while true do
+        for colorValue = 0, 1, 0.01 do
+            stroke.Color = Color3.fromHSV(colorValue, 1, 1)
+            task.wait(0.01)
+        end
+    end
+end)
+
         local TabCorner = Instance.new("UICorner")
         local Home = Instance.new("ScrollingFrame")
         local PageLayout = Instance.new("UIListLayout")
