@@ -43,6 +43,7 @@ DestroyYep()
 
 local screenGui = Instance.new("ScreenGui")
 screenGui.Name = "Toggle934483"
+screenGui.ResetOnSpawn = false
 screenGui.Parent = game.Players.LocalPlayer.PlayerGui
 
 local button = Instance.new("ImageButton")
