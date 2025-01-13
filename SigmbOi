@@ -32,9 +32,10 @@ end)
     local FrameCorner = Instance.new("UICorner")
     local DashBoard = Instance.new("Frame")
     local DashBoardCorner = Instance.new("UICorner")
-    local TabContainer = Instance.new("ScrollingFrame")
-TabContainer.CanvasSize = {0,0}, {3,0}
+ local TabContainer = Instance.new("ScrollingFrame")
+TabContainer.CanvasSize = UDim2.new(0, 0, 3, 0)
 TabContainer.ScrollBarImageTransparency = 1
+
 local function DestroyYep()
     for x = 1,69 do 
         if player.PlayerGui:FindFirstChild("Toggle934483") then player.PlayerGui:FindFirstChild("Toggle934483"):Destroy() end
