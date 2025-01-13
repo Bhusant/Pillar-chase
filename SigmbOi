@@ -32,7 +32,7 @@ end)
     local FrameCorner = Instance.new("UICorner")
     local DashBoard = Instance.new("Frame")
     local DashBoardCorner = Instance.new("UICorner")
-    local TabContainer = Instance.new("Frame")
+    local TabContainer = Instance.new("ScrollingFrame")
 local function DestroyYep()
     for x = 1,69 do 
         if player.PlayerGui:FindFirstChild("Toggle934483") then player.PlayerGui:FindFirstChild("Toggle934483"):Destroy() end
@@ -130,7 +130,7 @@ task.spawn(function()
     end
 end)
     local TabContainer_2 = Instance.new("UIListLayout")
-    local PageContainer = Instance.new("ScrollingFrame")
+    local PageContainer = Instance.new("Frame")
 local UI = Instance.new("UIStroke")
 UI.Parent = PageContainer
 UI.Thickness = 2
