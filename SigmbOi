@@ -130,7 +130,7 @@ task.spawn(function()
     end
 end)
     local TabContainer_2 = Instance.new("UIListLayout")
-    local PageContainer = Instance.new("Frame")
+    local PageContainer = Instance.new("ScrollingFrame")
 local UI = Instance.new("UIStroke")
 UI.Parent = PageContainer
 UI.Thickness = 2
