@@ -39,7 +39,7 @@ TabContainer.ScrollBarImageTransparency = 1
 
 local function DestroyYep()
     for x = 1,69 do 
-        if player.PlayerGui:FindFirstChild("Toggle934483") then player.PlayerGui:FindFirstChild("Toggle934483"):Destroy() end
+        if game.CoreGui:FindFirstChild("Toggle934483") then game.CoreGui:FindFirstChild("Toggle934483"):Destroy() end
     end
 end
 
@@ -48,7 +48,7 @@ DestroyYep()
 local screenGui = Instance.new("ScreenGui")
 screenGui.Name = "Toggle934483"
 screenGui.ResetOnSpawn = false
-screenGui.Parent = game.Players.LocalPlayer.PlayerGui
+screenGui.Parent = game.CoreGui
 
 local button = Instance.new("ImageButton")
 button.Size = UDim2.new(0, 50, 0, 50)
